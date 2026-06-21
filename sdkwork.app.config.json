@@ -8,13 +8,19 @@
     "description": "SDKWork Chinese chess (xiangqi) platform for matches, rooms, and leaderboards",
     "owner": "sdkwork-xiangqi",
     "domain": "game",
-    "capability": "match"
+    "capability": "match",
+    "key": "sdkwork-xiangqi",
+    "appType": "APP_HTML",
+    "officialWebsiteUrl": "https://sdkwork.com/apps/sdkwork-xiangqi"
   },
   "runtime": {
     "apiBaseUrl": "http://localhost:8098",
     "appApiPrefix": "/app/v3/api",
     "backendApiPrefix": "/backend/v3/api",
-    "supportedDeploymentProfiles": ["standalone", "cloud"],
+    "supportedDeploymentProfiles": [
+      "standalone",
+      "cloud"
+    ],
     "defaultDeploymentProfile": "standalone"
   },
   "sdk": {
@@ -30,5 +36,15 @@
     "match": true,
     "rooms": true,
     "leaderboards": true
-  }
+  },
+  "backend": {
+    "profileKey": "backend-root-admin",
+    "accessTokenPermissionScope": [
+      "iam.users.read",
+      "iam.organizations.read",
+      "iam.roles.read",
+      "iam.permissions.read"
+    ]
+  },
+  "environments": {}
 }
