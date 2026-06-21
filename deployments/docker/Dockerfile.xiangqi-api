@@ -1,0 +1,18 @@
+# Cloud profile API server image (reference).
+# Build from repository root: docker build -f deployments/docker/Dockerfile.XIANGQI-api .
+
+FROM rust:1-bookworm AS builder
+WORKDIR /build
+COPY . .
+RUN cargo build --release -p sdkwork-xiangqi-api-server
+
+FROM debian:bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY --from=builder /build/target/release/sdkwork-xiangqi-api-server /app/sdkwork-xiangqi-api-server
+COPY database /app/database
+COPY sdkwork.app.config.json /app/sdkwork.app.config.json
+ENV sdkwork_xiangqi_APP_ROOT=/app
+ENV xiangqi_API_BIND=0.0.0.0:8098
+EXPOSE 8098
+CMD ["/app/sdkwork-xiangqi-api-server"]

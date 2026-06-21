@@ -1,0 +1,19 @@
+schema_version: 1
+kind: sdkwork.database.schema
+module_id: xiangqi
+contract_version: 1.0.0
+owner_team: sdkwork-xiangqi
+compliance_level: L2
+engines:
+  - postgres
+table_prefix: xq_
+tables:
+  - name: xq_match
+    lifecycle_status: active
+    owner: sdkwork-xiangqi
+  - name: xq_room
+    lifecycle_status: active
+    owner: sdkwork-xiangqi
+  - name: xq_leaderboard
+    lifecycle_status: active
+    owner: sdkwork-xiangqi

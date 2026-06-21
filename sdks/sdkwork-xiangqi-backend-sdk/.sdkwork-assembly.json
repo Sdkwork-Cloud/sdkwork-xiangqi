@@ -1,0 +1,40 @@
+{
+  "workspace": "sdkwork-xiangqi-backend-sdk",
+  "title": "SDKWork Xiangqi Backend API SDK",
+  "apiVersion": "0.1.0",
+  "openapiVersion": "3.1.2",
+  "authoritySpec": "../../apis/backend-api/game/xiangqi-backend-api.openapi.json",
+  "generationInputSpec": "../../apis/backend-api/game/xiangqi-backend-api.openapi.json",
+  "derivedSpecs": {
+    "default": "../../apis/backend-api/game/xiangqi-backend-api.openapi.json"
+  },
+  "apiAuthority": "sdkwork-xiangqi-backend-api",
+  "discoverySurface": {
+    "sdkTarget": "backend",
+    "apiPrefix": "/backend/v3/api",
+    "schemaUrl": "/backend/v3/openapi.json",
+    "generatedProtocols": ["http-openapi"],
+    "manualTransports": []
+  },
+  "languages": [
+    {
+      "language": "typescript",
+      "workspace": "sdkwork-xiangqi-backend-sdk-typescript",
+      "generationState": "declared",
+      "releaseState": "not_published",
+      "generatedPath": "sdkwork-xiangqi-backend-sdk-typescript/generated/server-openapi",
+      "manifestPath": "sdkwork-xiangqi-backend-sdk-typescript/generated/server-openapi/package.json",
+      "name": "@sdkwork-internal/xiangqi-backend-sdk-generated",
+      "version": "0.1.0",
+      "description": "Generator-owned TypeScript transport SDK for sdkwork-xiangqi backend API.",
+      "consumerSurface": {
+        "primaryClient": "SdkworkXiangqiBackendClient",
+        "apiPrefix": "/backend/v3/api"
+      }
+    }
+  ],
+  "sdkOwner": "sdkwork-xiangqi",
+  "sdkDependencies": [],
+  "dependencyApiExports": [],
+  "dependencyApiSurfaces": []
+}

@@ -1,0 +1,32 @@
+use sdkwork_utils_rust::optional::default_if_blank;
+use sdkwork_xiangqi_api_server::{build_match_service, build_router};
+
+#[tokio::main]
+async fn main() {
+    tracing_subscriber::fmt()
+        .with_env_filter(
+            tracing_subscriber::EnvFilter::try_from_default_env()
+                .unwrap_or_else(|_| tracing_subscriber::EnvFilter::new("info")),
+        )
+        .init();
+
+    let bind_address = default_if_blank(
+        std::env::var("xiangqi_API_BIND")
+            .ok()
+            .or_else(|| std::env::var("sdkwork_xiangqi_APPLICATION_PUBLIC_INGRESS_BIND").ok())
+            .as_deref(),
+        "127.0.0.1:8098",
+    );
+
+    let store = build_match_service()
+        .await
+        .expect("XIANGQI match service bootstrap failed");
+    let app = build_router(store);
+    let listener = tokio::net::TcpListener::bind(&bind_address)
+        .await
+        .expect("bind XIANGQI api-server listener failed");
+    tracing::info!("sdkwork-xiangqi-api-server listening on {bind_address}");
+    axum::serve(listener, app)
+        .await
+        .expect("serve XIANGQI api-server failed");
+}

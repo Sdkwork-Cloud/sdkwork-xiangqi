@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.app.config",
+  "app": {
+    "name": "sdkwork-xiangqi",
+    "displayName": "SDKWork Xiangqi",
+    "version": "0.1.0",
+    "description": "SDKWork Chinese chess (xiangqi) platform for matches, rooms, and leaderboards",
+    "owner": "sdkwork-xiangqi",
+    "domain": "game",
+    "capability": "match"
+  },
+  "runtime": {
+    "apiBaseUrl": "http://localhost:8098",
+    "appApiPrefix": "/app/v3/api",
+    "backendApiPrefix": "/backend/v3/api",
+    "supportedDeploymentProfiles": ["standalone", "cloud"],
+    "defaultDeploymentProfile": "standalone"
+  },
+  "sdk": {
+    "appApiAuthority": "sdkwork-xiangqi-app-api",
+    "backendApiAuthority": "sdkwork-xiangqi-backend-api",
+    "appSdkFamily": "sdkwork-xiangqi-app-sdk",
+    "backendSdkFamily": "sdkwork-xiangqi-backend-sdk"
+  },
+  "sdkDependencies": [],
+  "dependencyApiExports": [],
+  "dependencyApiSurfaces": [],
+  "features": {
+    "match": true,
+    "rooms": true,
+    "leaderboards": true
+  }
+}

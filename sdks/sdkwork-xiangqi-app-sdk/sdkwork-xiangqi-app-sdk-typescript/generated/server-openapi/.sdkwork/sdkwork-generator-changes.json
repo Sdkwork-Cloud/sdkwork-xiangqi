@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "sdk": {
+    "name": "sdkwork-xiangqi-app-sdk",
+    "version": "0.1.0",
+    "language": "typescript",
+    "sdkType": "app",
+    "protocol": "http",
+    "packageName": "@sdkwork-internal/xiangqi-app-sdk-generated"
+  },
+  "changeFingerprint": "d26d7468e37b345c5fb16ce7b6930dad123ab497317e600c1c631e136f02ea05",
+  "changes": {
+    "createdGeneratedFiles": [
+      "src/api/xiangqi.ts",
+      "src/types/xiangqi-api-result.ts",
+      "src/types/xiangqi-health-response.ts",
+      "src/types/xiangqi-match-item.ts",
+      "src/types/xiangqi-match-page.ts"
+    ],
+    "updatedGeneratedFiles": [
+      "README.md",
+      "src/api/health.ts",
+      "src/api/index.ts",
+      "src/sdk.ts",
+      "src/types/index.ts"
+    ],
+    "unchangedGeneratedFiles": [
+      "bin/publish-core.mjs",
+      "bin/publish.ps1",
+      "bin/publish.sh",
+      "bin/sdk-gen.bat",
+      "bin/sdk-gen.sh",
+      "CHANGELOG.md",
+      "LICENSE",
+      "package.json",
+      "sdkwork-sdk.json",
+      "src/api/base.ts",
+      "src/api/paths.ts",
+      "src/auth/index.ts",
+      "src/http/client.ts",
+      "src/http/index.ts",
+      "src/index.ts",
+      "src/types/common.ts",
+      "src/types/problem-detail.ts",
+      "tsconfig.json"
+    ],
+    "deletedGeneratedFiles": [
+      "src/api/XIANGQI.ts",
+      "src/types/XIANGQI-api-result.ts",
+      "src/types/XIANGQI-health-response.ts",
+      "src/types/XIANGQI-match-item.ts",
+      "src/types/XIANGQI-match-page.ts"
+    ],
+    "scaffoldedFiles": [],
+    "preservedScaffoldFiles": [
+      "custom/build-runtime.mjs",
+      "custom/README.md"
+    ],
+    "backedUpFiles": [
+      "README.md",
+      "src/api/health.ts",
+      "src/api/index.ts",
+      "src/api/XIANGQI.ts",
+      "src/sdk.ts",
+      "src/types/index.ts",
+      "src/types/XIANGQI-api-result.ts",
+      "src/types/XIANGQI-health-response.ts",
+      "src/types/XIANGQI-match-item.ts",
+      "src/types/XIANGQI-match-page.ts"
+    ]
+  },
+  "impact": {
+    "schemaVersion": 1,
+    "areas": [
+      "api-surface",
+      "models",
+      "documentation"
+    ],
+    "details": [
+      {
+        "area": "api-surface",
+        "paths": [
+          "src/api/health.ts",
+          "src/api/index.ts",
+          "src/api/xiangqi.ts",
+          "src/api/XIANGQI.ts",
+          "src/sdk.ts"
+        ]
+      },
+      {
+        "area": "models",
+        "paths": [
+          "src/types/index.ts",
+          "src/types/xiangqi-api-result.ts",
+          "src/types/XIANGQI-api-result.ts",
+          "src/types/xiangqi-health-response.ts",
+          "src/types/XIANGQI-health-response.ts",
+          "src/types/xiangqi-match-item.ts",
+          "src/types/XIANGQI-match-item.ts",
+          "src/types/xiangqi-match-page.ts",
+          "src/types/XIANGQI-match-page.ts"
+        ]
+      },
+      {
+        "area": "documentation",
+        "paths": [
+          "README.md"
+        ]
+      }
+    ],
+    "requiresVerification": true,
+    "summary": "Detected impact areas: api-surface, models, documentation. Verification is required."
+  },
+  "verificationPlan": {
+    "shouldRun": true,
+    "runPhase": "now",
+    "summary": "Detected impact areas: api-surface, models, documentation. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "steps": [
+      {
+        "id": "check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, documentation.",
+        "workingDirectory": "E:\\sdkwork-space\\sdkwork-xiangqi\\sdks\\sdkwork-xiangqi-app-sdk\\sdkwork-xiangqi-app-sdk-typescript\\generated\\server-openapi",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action check"
+      },
+      {
+        "id": "build",
+        "title": "Unified package build",
+        "required": true,
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, documentation.",
+        "workingDirectory": "E:\\sdkwork-space\\sdkwork-xiangqi\\sdks\\sdkwork-xiangqi-app-sdk\\sdkwork-xiangqi-app-sdk-typescript\\generated\\server-openapi",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "typescript",
+          "--project-dir",
+          ".",
+          "--action",
+          "build"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language typescript --project-dir . --action build"
+      }
+    ]
+  },
+  "executionDecision": {
+    "schemaVersion": 1,
+    "riskLevel": "high",
+    "nextAction": "verify",
+    "requiresManualReview": false,
+    "applyRequiresExpectedFingerprint": false,
+    "summary": "Changes have been applied. Run the required verification plan now.",
+    "reasons": [
+      "backed-up-generated-files",
+      "deleted-generated-files",
+      "manual-review-required",
+      "verification-required"
+    ]
+  },
+  "preservedLegacyFiles": false
+}
