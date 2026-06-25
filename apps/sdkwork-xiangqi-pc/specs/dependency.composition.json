@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.dependency.composition",
+  "applicationCode": "xiangqi",
+  "clientArchitecture": "pc",
+  "surfaces": [
+    {
+      "surface": "app",
+      "corePackage": "sdkwork-xiangqi-pc-core",
+      "sdkClients": [],
+      "reusableModules": [],
+      "hostAdapters": [],
+      "dependencyApiExports": [],
+      "dependencyApiSurfaces": []
+    }
+  ],
+  "buildToolEntries": {
+    "pnpm": {
+      "workspacePackages": [
+        "sdkwork-xiangqi-pc-core",
+        "sdkwork-xiangqi-pc-arena",
+        "sdkwork-xiangqi-pc-auth",
+        "sdkwork-xiangqi-pc-claws",
+        "sdkwork-xiangqi-pc-commons",
+        "sdkwork-xiangqi-pc-compute",
+        "sdkwork-xiangqi-pc-dashboard",
+        "sdkwork-xiangqi-pc-i18n",
+        "sdkwork-xiangqi-pc-mall",
+        "sdkwork-xiangqi-pc-quiz",
+        "sdkwork-xiangqi-pc-recharge",
+        "sdkwork-xiangqi-pc-ringmatch",
+        "sdkwork-xiangqi-pc-user",
+        "sdkwork-xiangqi-pc-vip",
+        "sdkwork-xiangqi-pc-wallet"
+      ]
+    }
+  }
+}
