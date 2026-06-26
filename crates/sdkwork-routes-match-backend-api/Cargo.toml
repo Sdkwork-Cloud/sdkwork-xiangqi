@@ -1,17 +1,16 @@
 [package]
-name = "sdkwork-router-match-app-api"
+name = "sdkwork-routes-match-backend-api"
 version.workspace = true
 edition.workspace = true
 license = "Apache-2.0"
-description = "SDKWork Xiangqi match app-api router."
+description = "SDKWork Xiangqi match backend-api router."
 
 [lib]
-name = "sdkwork_router_match_app_api"
+name = "sdkwork_routes_match_backend_api"
 path = "src/lib.rs"
 
 [dependencies]
 axum.workspace = true
-serde.workspace = true
-serde_json.workspace = true
 sdkwork_game_match_service.workspace = true
+sdkwork-routes-match-app-api = { path = "../sdkwork-routes-match-app-api" }
 sdkwork-web-axum.workspace = true

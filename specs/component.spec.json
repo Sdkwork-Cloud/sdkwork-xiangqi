@@ -51,7 +51,7 @@
       "package.json#scripts.dev",
       "package.json#scripts.verify"
     ],
-    "routeManifest": "sdks/_route-manifests/app-api/sdkwork-router-match-app-api.route-manifest.json",
+    "routeManifest": "sdks/_route-manifests/app-api/sdkwork-routes-match-app-api.route-manifest.json",
     "sdkClients": ["sdkwork-xiangqi-app-sdk", "sdkwork-xiangqi-backend-sdk"],
     "events": [],
     "configKeys": ["XIANGQI_DATABASE_URL", "SDKWORK_XIANGQI_APP_ROOT"]
