@@ -17,7 +17,7 @@ SDKWork Xiangqi (中国象棋) application root. Provides match, room, and leade
 
 ## Framework integration
 
-- **HTTP**: `sdkwork-web-framework` via `crates/sdkwork-xiangqi-api-server`
+- **HTTP**: `sdkwork-web-framework` via `crates/sdkwork-xiangqi-standalone-gateway`
 - **Database**: `sdkwork-database` via `crates/sdkwork-xiangqi-database-host` and `database/`
 - **Utils**: `@sdkwork/utils` (TypeScript), `sdkwork-utils-rust` (Rust)
 - **Discovery**: not integrated (no RPC services yet; add when split-service RPC is required)

@@ -1,5 +1,5 @@
 use sdkwork_utils_rust::optional::default_if_blank;
-use sdkwork_xiangqi_api_server::{build_match_service, build_router};
+use sdkwork_xiangqi_standalone_gateway::{build_match_service, build_router};
 
 #[tokio::main]
 async fn main() {
@@ -24,9 +24,9 @@ async fn main() {
     let app = build_router(store);
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
-        .expect("bind XIANGQI api-server listener failed");
-    tracing::info!("sdkwork-xiangqi-api-server listening on {bind_address}");
+        .expect("bind XIANGQI standalone-gateway listener failed");
+    tracing::info!("sdkwork-xiangqi-standalone-gateway listening on {bind_address}");
     axum::serve(listener, app)
         .await
-        .expect("serve XIANGQI api-server failed");
+        .expect("serve XIANGQI standalone-gateway failed");
 }

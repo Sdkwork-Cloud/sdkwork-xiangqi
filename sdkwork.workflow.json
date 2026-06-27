@@ -78,7 +78,7 @@
       {
         "name": "Package XIANGQI API server",
         "shell": "pwsh",
-        "run": "cargo build --release -p sdkwork-xiangqi-api-server"
+        "run": "cargo build --release -p sdkwork-xiangqi-standalone-gateway"
       }
     ],
     "validate": [
@@ -111,7 +111,7 @@
       "architecture": "x64",
       "formats": ["tar.gz"],
       "runner": "ubuntu-24.04",
-      "outputGlobs": ["target/release/sdkwork-xiangqi-api-server*"],
+      "outputGlobs": ["target/release/sdkwork-xiangqi-standalone-gateway*"],
       "deploymentProfile": "cloud",
       "runtimeTarget": "container"
     }

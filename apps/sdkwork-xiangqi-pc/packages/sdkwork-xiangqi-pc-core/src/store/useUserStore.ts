@@ -39,7 +39,7 @@ interface UserState {
 }
 
 const defaultProfile: UserProfile = {
-  id: 'user-1',
+  id: '1',
   username: 'Player_001',
   avatar: 'https://picsum.photos/seed/user1/200/200',
   level: 5,
