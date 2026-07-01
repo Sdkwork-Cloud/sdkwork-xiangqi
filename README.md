@@ -1,4 +1,5 @@
 # SDKWork Xiangqi
+repository-kind: application
 
 SDKWork Xiangqi (中国象棋) application root. Provides match, room, and leaderboard capabilities aligned with `../sdkwork-specs`.
 

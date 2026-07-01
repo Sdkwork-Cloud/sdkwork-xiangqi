@@ -1,9 +1,11 @@
 packages:
+  - "apps/sdkwork-xiangqi-common"
+  - "apps/sdkwork-xiangqi-common/packages/*"
+  - "apps/sdkwork-xiangqi-pc"
+  - "apps/sdkwork-xiangqi-pc/packages/*"
   - "sdks/*"
   - "sdks/sdkwork-xiangqi-app-sdk/sdkwork-xiangqi-app-sdk-typescript/generated/server-openapi"
   - "sdks/sdkwork-xiangqi-backend-sdk/sdkwork-xiangqi-backend-sdk-typescript/generated/server-openapi"
-  - "packages/common/XIANGQI/*"
-  - "apps/sdkwork-xiangqi-pc/packages/*"
   - "../sdkwork-utils/packages/sdkwork-utils-typescript"
 
 catalog:
