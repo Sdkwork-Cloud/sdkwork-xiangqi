@@ -5,7 +5,7 @@ import { defineConfig, loadEnv } from 'vite';
 
 const XIANGQIAppSdkRoot = path.resolve(
   __dirname,
-  '../../sdks/sdkwork-xiangqi-app-sdk/sdkwork-xiangqi-app-sdk-typescript/generated/server-openapi',
+  '../../sdks/sdkwork-xiangqi-app-sdk/sdkwork-xiangqi-app-sdk-typescript/src/index.ts',
 );
 
 export default defineConfig(({ mode }) => {

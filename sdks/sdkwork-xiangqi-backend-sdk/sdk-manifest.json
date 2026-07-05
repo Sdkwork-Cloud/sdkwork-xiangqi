@@ -1,4 +1,15 @@
 {
+  "schemaVersion": 1,
+  "sdkFamily": "sdkwork-xiangqi-backend-sdk",
+  "sdkName": "sdkwork-xiangqi-backend-sdk",
+  "packageName": "@sdkwork/xiangqi-backend-sdk",
+  "transportPackageName": "sdkwork-xiangqi-backend-sdk-generated-typescript",
+  "typescript": {
+    "composedRoot": "sdkwork-xiangqi-backend-sdk-typescript",
+    "composedEntry": "sdkwork-xiangqi-backend-sdk-typescript/src/index.ts",
+    "transportRoot": "sdkwork-xiangqi-backend-sdk-typescript/generated/server-openapi",
+    "transportEntry": "sdkwork-xiangqi-backend-sdk-typescript/generated/server-openapi/src/index.ts"
+  },
   "workspace": "sdkwork-xiangqi-backend-sdk",
   "title": "SDKWork Xiangqi Backend API SDK",
   "apiVersion": "0.1.0",
@@ -8,14 +19,18 @@
   "derivedSpecs": {
     "default": "../../apis/backend-api/game/xiangqi-backend-api.openapi.json"
   },
+  "sdkOwner": "sdkwork-xiangqi",
   "apiAuthority": "sdkwork-xiangqi-backend-api",
   "discoverySurface": {
     "sdkTarget": "backend",
     "apiPrefix": "/backend/v3/api",
     "schemaUrl": "/backend/v3/openapi.json",
-    "generatedProtocols": ["http-openapi"],
+    "generatedProtocols": [
+      "http-openapi"
+    ],
     "manualTransports": []
   },
+  "sdkDependencies": [],
   "languages": [
     {
       "language": "typescript",
@@ -30,11 +45,9 @@
       "consumerSurface": {
         "primaryClient": "SdkworkXiangqiBackendClient",
         "apiPrefix": "/backend/v3/api"
-      }
+      },
+      "consumerPackageName": "@sdkwork/xiangqi-backend-sdk",
+      "transportPackageName": "sdkwork-xiangqi-backend-sdk-generated-typescript"
     }
-  ],
-  "sdkOwner": "sdkwork-xiangqi",
-  "sdkDependencies": [],
-  "dependencyApiExports": [],
-  "dependencyApiSurfaces": []
+  ]
 }
