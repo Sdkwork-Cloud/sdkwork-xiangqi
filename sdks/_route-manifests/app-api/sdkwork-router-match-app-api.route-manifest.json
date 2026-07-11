@@ -18,7 +18,7 @@
     {
       "method": "GET",
       "path": "/app/v3/api/xiangqi/matches",
-      "operationId": "XIANGQI.match.list",
+      "operationId": "xiangqi.match.list",
       "tags": ["xiangqi"],
       "requestContext": "WebRequestContext",
       "apiSurface": "app-api",
@@ -31,7 +31,7 @@
     {
       "method": "GET",
       "path": "/app/v3/api/xiangqi/matches/{matchId}",
-      "operationId": "XIANGQI.match.retrieve",
+      "operationId": "xiangqi.match.retrieve",
       "tags": ["xiangqi"],
       "requestContext": "WebRequestContext",
       "apiSurface": "app-api",

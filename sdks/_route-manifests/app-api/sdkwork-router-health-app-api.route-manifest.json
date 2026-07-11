@@ -18,7 +18,7 @@
     {
       "method": "GET",
       "path": "/app/v3/api/system/health",
-      "operationId": "XIANGQI.health.check",
+      "operationId": "xiangqi.health.check",
       "tags": ["health"],
       "requestContext": "WebRequestContext",
       "apiSurface": "app-api",
@@ -31,7 +31,7 @@
     {
       "method": "GET",
       "path": "/app/v3/api/system/ready",
-      "operationId": "XIANGQI.ready.check",
+      "operationId": "xiangqi.ready.check",
       "tags": ["health"],
       "requestContext": "WebRequestContext",
       "apiSurface": "app-api",

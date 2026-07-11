@@ -18,7 +18,7 @@
     {
       "method": "GET",
       "path": "/backend/v3/api/xiangqi/matches",
-      "operationId": "backend.XIANGQI.match.list",
+      "operationId": "backend.xiangqi.match.list",
       "tags": ["xiangqi"],
       "requestContext": "WebRequestContext",
       "apiSurface": "backend-api",
