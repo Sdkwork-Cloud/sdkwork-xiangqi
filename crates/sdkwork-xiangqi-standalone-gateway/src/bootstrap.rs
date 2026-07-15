@@ -10,7 +10,6 @@ use sdkwork_routes_health_app_api::build_health_router;
 use sdkwork_routes_match_app_api::{build_match_app_router, MatchStore};
 use sdkwork_routes_match_backend_api::build_match_backend_router;
 use sdkwork_xiangqi_database_host::bootstrap_xiangqi_database_from_env;
-use tower_http::cors::CorsLayer;
 
 use crate::{with_xiangqi_app_request_context, with_xiangqi_backend_request_context};
 
@@ -46,5 +45,8 @@ pub fn build_router(store: SharedMatchService) -> Router {
     Router::new()
         .merge(app_routes)
         .merge(backend_routes)
-        .layer(CorsLayer::permissive())
+        .layer(sdkwork_web_bootstrap::application_cors_layer_from_env(
+            &["SDKWORK_XIANGQI_ENVIRONMENT"],
+            &["SDKWORK_XIANGQI_CORS_ALLOWED_ORIGINS", "SDKWORK_CORS_ALLOWED_ORIGINS"],
+        ))
 }
