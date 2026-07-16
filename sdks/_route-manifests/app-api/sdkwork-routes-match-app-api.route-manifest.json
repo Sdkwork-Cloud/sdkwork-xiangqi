@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.route.manifest",
+  "packageName": "sdkwork-routes-match-app-api",
+  "surface": "app-api",
+  "owner": "sdkwork-xiangqi",
+  "domain": "game",
+  "capability": "match",
+  "apiAuthority": "sdkwork-xiangqi-app-api",
+  "sdkFamily": "sdkwork-xiangqi-app-sdk",
+  "prefix": "/app/v3/api",
+  "source": {
+    "crateRoot": "crates/sdkwork-routes-match-app-api",
+    "crateImport": "sdkwork_routes_match_app_api",
+    "openapiAuthority": "apis/app-api/game/xiangqi-app-api.openapi.json"
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/app/v3/api/xiangqi/matches",
+      "operationId": "xiangqi.match.list",
+      "tags": ["xiangqi"],
+      "requestContext": "WebRequestContext",
+      "apiSurface": "app-api",
+      "auth": { "mode": "dual-token", "required": true, "tenantScope": "tenant", "dataScope": "organization" },
+      "handler": { "module": "crate", "name": "xiangqi_match_list" },
+      "schemas": { "request": null, "response": "XiangqiApiResult", "problem": "ProblemDetail" },
+      "ownership": { "owner": "sdkwork-xiangqi", "apiAuthority": "sdkwork-xiangqi-app-api" },
+      "source": { "file": "apis/app-api/game/xiangqi-app-api.openapi.json" }
+    },
+    {
+      "method": "GET",
+      "path": "/app/v3/api/xiangqi/matches/{matchId}",
+      "operationId": "xiangqi.match.retrieve",
+      "tags": ["xiangqi"],
+      "requestContext": "WebRequestContext",
+      "apiSurface": "app-api",
+      "auth": { "mode": "dual-token", "required": true, "tenantScope": "tenant", "dataScope": "organization" },
+      "handler": { "module": "crate", "name": "xiangqi_match_retrieve" },
+      "schemas": { "request": null, "response": "XiangqiApiResult", "problem": "ProblemDetail" },
+      "ownership": { "owner": "sdkwork-xiangqi", "apiAuthority": "sdkwork-xiangqi-app-api" },
+      "source": { "file": "apis/app-api/game/xiangqi-app-api.openapi.json" }
+    }
+  ]
+}

@@ -1930,6 +1930,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-xiangqi-gateway-assembly"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "sdkwork-routes-match-app-api",
+ "sdkwork-routes-match-backend-api",
+ "sdkwork-xiangqi-standalone-gateway",
+ "tokio",
+]
+
+[[package]]
 name = "sdkwork-xiangqi-standalone-gateway"
 version = "0.1.0"
 dependencies = [

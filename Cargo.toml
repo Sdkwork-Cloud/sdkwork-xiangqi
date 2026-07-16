@@ -1,6 +1,7 @@
 [workspace]
 resolver = "2"
 members = [
+    "crates/sdkwork-xiangqi-gateway-assembly",
     "crates/sdkwork-xiangqi-standalone-gateway",
     "crates/sdkwork-xiangqi-database-host",
     "crates/sdkwork-game-match-service",

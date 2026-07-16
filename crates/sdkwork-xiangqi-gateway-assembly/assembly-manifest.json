@@ -1,0 +1,30 @@
+{
+  "kind": "sdkwork.gateway.assembly",
+  "schemaVersion": 1,
+  "applicationCode": "xiangqi",
+  "packageName": "sdkwork-xiangqi-gateway-assembly",
+  "crateDir": "crates/sdkwork-xiangqi-gateway-assembly",
+  "generatedAt": "2026-07-16T04:44:51.397Z",
+  "routeCrates": [
+    {
+      "packageName": "sdkwork-routes-match-app-api",
+      "memberDir": "crates/sdkwork-routes-match-app-api",
+      "libName": "sdkwork_routes_match_app_api",
+      "surface": "app-api",
+      "pathPrefix": null,
+      "mountOrder": 0,
+      "hasGatewayMount": false,
+      "hasGatewayRouteManifest": false
+    },
+    {
+      "packageName": "sdkwork-routes-match-backend-api",
+      "memberDir": "crates/sdkwork-routes-match-backend-api",
+      "libName": "sdkwork_routes_match_backend_api",
+      "surface": "backend-api",
+      "pathPrefix": null,
+      "mountOrder": 1,
+      "hasGatewayMount": false,
+      "hasGatewayRouteManifest": false
+    }
+  ]
+}
