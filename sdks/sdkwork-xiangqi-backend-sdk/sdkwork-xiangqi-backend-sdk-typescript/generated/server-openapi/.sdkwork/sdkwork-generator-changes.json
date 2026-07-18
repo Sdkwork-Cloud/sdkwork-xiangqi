@@ -9,20 +9,24 @@
     "protocol": "http",
     "packageName": "@sdkwork-internal/xiangqi-backend-sdk-generated"
   },
-  "changeFingerprint": "22b86d994372a3360bc2ba0e726dc73be4decd6152542824491ad86e6f53c6cb",
+  "changeFingerprint": "a463a4ca9ad1a2bec3d483ab082d6c290e37b1524ec4e3c1f3e95447993c61c4",
   "changes": {
     "createdGeneratedFiles": [
-      "src/api/xiangqi.ts",
-      "src/types/xiangqi-api-result.ts",
-      "src/types/xiangqi-health-response.ts",
-      "src/types/xiangqi-match-item.ts",
-      "src/types/xiangqi-match-page.ts"
+      "src/types/page-info.ts",
+      "src/types/sdk-work-api-response.ts",
+      "src/types/xiangqi-match-data.ts",
+      "src/types/xiangqi-match-list-data.ts",
+      "src/types/xiangqi-match-list-response.ts",
+      "src/types/xiangqi-match-response.ts"
     ],
     "updatedGeneratedFiles": [
-      "README.md",
-      "src/api/index.ts",
-      "src/sdk.ts",
-      "src/types/index.ts"
+      "package.json",
+      "sdkwork-sdk.json",
+      "src/api/xiangqi.ts",
+      "src/http/client.ts",
+      "src/types/index.ts",
+      "src/types/problem-detail.ts",
+      "src/types/xiangqi-match-item.ts"
     ],
     "unchangedGeneratedFiles": [
       "bin/publish-core.mjs",
@@ -32,24 +36,21 @@
       "bin/sdk-gen.sh",
       "CHANGELOG.md",
       "LICENSE",
-      "package.json",
-      "sdkwork-sdk.json",
+      "README.md",
       "src/api/base.ts",
+      "src/api/index.ts",
       "src/api/paths.ts",
       "src/auth/index.ts",
-      "src/http/client.ts",
       "src/http/index.ts",
       "src/index.ts",
+      "src/sdk.ts",
       "src/types/common.ts",
-      "src/types/problem-detail.ts",
       "tsconfig.json"
     ],
     "deletedGeneratedFiles": [
-      "src/api/XIANGQI.ts",
-      "src/types/XIANGQI-api-result.ts",
-      "src/types/XIANGQI-health-response.ts",
-      "src/types/XIANGQI-match-item.ts",
-      "src/types/XIANGQI-match-page.ts"
+      "src/types/xiangqi-api-result.ts",
+      "src/types/xiangqi-health-response.ts",
+      "src/types/xiangqi-match-page.ts"
     ],
     "scaffoldedFiles": [],
     "preservedScaffoldFiles": [
@@ -57,15 +58,8 @@
       "custom/README.md"
     ],
     "backedUpFiles": [
-      "README.md",
-      "src/api/index.ts",
-      "src/api/XIANGQI.ts",
-      "src/sdk.ts",
-      "src/types/index.ts",
-      "src/types/XIANGQI-api-result.ts",
-      "src/types/XIANGQI-health-response.ts",
-      "src/types/XIANGQI-match-item.ts",
-      "src/types/XIANGQI-match-page.ts"
+      "package.json",
+      "sdkwork-sdk.json"
     ]
   },
   "impact": {
@@ -73,52 +67,61 @@
     "areas": [
       "api-surface",
       "models",
-      "documentation"
+      "runtime",
+      "build-metadata"
     ],
     "details": [
       {
         "area": "api-surface",
         "paths": [
-          "src/api/index.ts",
           "src/api/xiangqi.ts",
-          "src/api/XIANGQI.ts",
-          "src/sdk.ts"
+          "src/http/client.ts"
         ]
       },
       {
         "area": "models",
         "paths": [
           "src/types/index.ts",
+          "src/types/page-info.ts",
+          "src/types/problem-detail.ts",
+          "src/types/sdk-work-api-response.ts",
           "src/types/xiangqi-api-result.ts",
-          "src/types/XIANGQI-api-result.ts",
           "src/types/xiangqi-health-response.ts",
-          "src/types/XIANGQI-health-response.ts",
+          "src/types/xiangqi-match-data.ts",
           "src/types/xiangqi-match-item.ts",
-          "src/types/XIANGQI-match-item.ts",
+          "src/types/xiangqi-match-list-data.ts",
+          "src/types/xiangqi-match-list-response.ts",
           "src/types/xiangqi-match-page.ts",
-          "src/types/XIANGQI-match-page.ts"
+          "src/types/xiangqi-match-response.ts"
         ]
       },
       {
-        "area": "documentation",
+        "area": "runtime",
         "paths": [
-          "README.md"
+          "src/http/client.ts"
+        ]
+      },
+      {
+        "area": "build-metadata",
+        "paths": [
+          "package.json",
+          "sdkwork-sdk.json"
         ]
       }
     ],
     "requiresVerification": true,
-    "summary": "Detected impact areas: api-surface, models, documentation. Verification is required."
+    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata. Verification is required."
   },
   "verificationPlan": {
     "shouldRun": true,
     "runPhase": "now",
-    "summary": "Detected impact areas: api-surface, models, documentation. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata. Verification is required. Run the required verification commands now against the generated SDK output.",
     "steps": [
       {
         "id": "check",
         "title": "Unified package check",
         "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, documentation.",
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata.",
         "workingDirectory": "E:\\sdkwork-space\\sdkwork-xiangqi\\sdks\\sdkwork-xiangqi-backend-sdk\\sdkwork-xiangqi-backend-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -136,7 +139,7 @@
         "id": "build",
         "title": "Unified package build",
         "required": true,
-        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, documentation.",
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata.",
         "workingDirectory": "E:\\sdkwork-space\\sdkwork-xiangqi\\sdks\\sdkwork-xiangqi-backend-sdk\\sdkwork-xiangqi-backend-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [

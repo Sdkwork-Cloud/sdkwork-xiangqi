@@ -40,27 +40,23 @@
     },
     {
       "path": "package.json",
-      "sha256": "38f27028d8d3f8a480b10a93ceae3d95c4eba013516cf1700eb6f2efc7e1b9c8"
+      "sha256": "0634333209d64736ed5c5de7dcacea0f9daeeee26f8967c582a409dab1254f7a"
     },
     {
       "path": "README.md",
-      "sha256": "529378c78e777e8c058e90a29676146f4f091a4c228920dd4fd179813b884517"
+      "sha256": "874719df1a872acc6939975eda0f592be49cdd015b90119ede9b41606a4565a4"
     },
     {
       "path": "sdkwork-sdk.json",
-      "sha256": "c339d1e9be4557bb4ccd5a5630999a6d6b628ced6f32b6316404dbd6d01ba4e3"
+      "sha256": "415b8412043bc314428398a3724d539e8814a9320a4c9bdbed9611c1124b6f9d"
     },
     {
       "path": "src/api/base.ts",
       "sha256": "02ad25e6bf331ff241ba387c2947ddf1900dd849038e08c2757416a3aa788a04"
     },
     {
-      "path": "src/api/health.ts",
-      "sha256": "ec4f48cffa1d15cc99e7b6d20c5232c743d7cbe26d24803ba46277afbdc0cd37"
-    },
-    {
       "path": "src/api/index.ts",
-      "sha256": "c68bfdd0b2077a0581e04f62d5b4036e8cd3496082cd72feec2903536d139ecf"
+      "sha256": "2ad4b7226f4a50dc666d46f21dd69fcbfb7159f02a3a23c872ad1e56625a370c"
     },
     {
       "path": "src/api/paths.ts",
@@ -68,7 +64,7 @@
     },
     {
       "path": "src/api/xiangqi.ts",
-      "sha256": "df7fda9beac1802db5917a8d4e9647a9320794ab3112f7317cdc8ab9587a6ab4"
+      "sha256": "910d1e89c5233f70d8286493f7096738060802979519491a2e660fd85732e149"
     },
     {
       "path": "src/auth/index.ts",
@@ -76,7 +72,7 @@
     },
     {
       "path": "src/http/client.ts",
-      "sha256": "7c5521163579261418c56e8126b0389dd78be9e0931e5e6064749c7cc9df0edc"
+      "sha256": "902ecbf9b15072c147ac9716f22209cd50b770e517b55d1ce1583671ab4d2c3e"
     },
     {
       "path": "src/http/index.ts",
@@ -88,7 +84,7 @@
     },
     {
       "path": "src/sdk.ts",
-      "sha256": "1e8bc5471dcf520a057c549d2516b9c7b9692f910b36fc7a4770a5fdf8c615a5"
+      "sha256": "601a295bc149851d1888ec282eddc64c89adfebff6c1acc8882a8456584eba66"
     },
     {
       "path": "src/types/common.ts",
@@ -96,27 +92,39 @@
     },
     {
       "path": "src/types/index.ts",
-      "sha256": "f41e898fcf05d69645d4481f758aaf10f254331c0e527989402e8a175ac3f5fe"
+      "sha256": "7da2c518d6f930347c841993d6afb67ecf3d87e846b3da98cd697fdc27fdc2b0"
+    },
+    {
+      "path": "src/types/page-info.ts",
+      "sha256": "a49c8f4bd6cda7ba5cbdf169d2c95ceeb89db10354dee31fe2cffa35be8a5fd8"
     },
     {
       "path": "src/types/problem-detail.ts",
-      "sha256": "46b7995d1fe77bd7511e83e69fef6a0afaf697d0a0b612d651af5591854453cf"
+      "sha256": "86ddd0a5bee6221fbe98858c8367b19710de87cab86fa63ef1b5aff98c598f2c"
     },
     {
-      "path": "src/types/xiangqi-api-result.ts",
-      "sha256": "e2ed976118bbbef5b1a99547e13668614139bc33f3d80521d63df142b68601b3"
+      "path": "src/types/sdk-work-api-response.ts",
+      "sha256": "b0e8a26047d6002f67c43b0accaebb34d4d7a4d6ba8f77c55ed9bd0a9036cc77"
     },
     {
-      "path": "src/types/xiangqi-health-response.ts",
-      "sha256": "775f391f5247edded06324bc6f70b43aa2c088f92f9e8b4e60d1645b967afaab"
+      "path": "src/types/xiangqi-match-data.ts",
+      "sha256": "dc2f6bc9bf6d493253393f5ec1476983022abc988d04580a1ae2a41518cc0297"
     },
     {
       "path": "src/types/xiangqi-match-item.ts",
-      "sha256": "cd3adcfc472001251dbc5ebde9e6899d8cb28630ce6d8ac25e633f1c162ba998"
+      "sha256": "5b4eecfe053ea1f6191523577a354bbede9f9a03fca34108f4413af4c2f9938a"
     },
     {
-      "path": "src/types/xiangqi-match-page.ts",
-      "sha256": "ae9cbaf6090c48cea078a29093391d586d9d6b4f45b246df6caf86149ab5b638"
+      "path": "src/types/xiangqi-match-list-data.ts",
+      "sha256": "7126da6dbe42d2d8689add05543aba2cf3190e18a547e73c313368696b402547"
+    },
+    {
+      "path": "src/types/xiangqi-match-list-response.ts",
+      "sha256": "1137fb1456ba71d711f0d9f8941dafc6c5250fed0d76fb682d21b04faabc51e1"
+    },
+    {
+      "path": "src/types/xiangqi-match-response.ts",
+      "sha256": "5935b1593a88d36431eecceac6bfcb749360e98d09ba544f393f5b7c46a153e0"
     },
     {
       "path": "tsconfig.json",

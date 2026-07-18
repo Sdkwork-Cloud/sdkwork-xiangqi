@@ -27,7 +27,12 @@ client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
 
 // Use the SDK
-const result = await client.health.xiangqi.health.check();
+const params = {
+  page: 1,
+  page_size: 2,
+  status: 'status',
+};
+const result = await client.xiangqi.match.list(params);
 ```
 
 ## Authentication
@@ -54,17 +59,9 @@ const client = new SdkworkXiangqiAppClient({
 
 ## API Modules
 
-- `client.health` - health API
 - `client.xiangqi` - xiangqi API
 
 ## Usage Examples
-
-### health
-
-```typescript
-// GET /app/v3/api/system/health
-const result = await client.health.xiangqi.health.check();
-```
 
 ### xiangqi
 
@@ -84,7 +81,12 @@ const result = await client.xiangqi.match.list(params);
 import { SdkworkXiangqiAppClient, NetworkError, TimeoutError, AuthenticationError } from '@sdkwork-internal/xiangqi-app-sdk-generated';
 
 try {
-  const result = await client.health.xiangqi.health.check();
+  const params = {
+    page: 1,
+    page_size: 2,
+    status: 'status',
+  };
+  const result = await client.xiangqi.match.list(params);
 } catch (error) {
   if (error instanceof AuthenticationError) {
     console.error('Authentication failed:', error.message);

@@ -5,6 +5,8 @@
   "language": "typescript",
   "sdkType": "app",
   "packageName": "sdkwork-xiangqi-app-sdk-generated-typescript",
+  "transportPackageName": "sdkwork-xiangqi-app-sdk-generated-typescript",
+  "consumerPackageName": "@sdkwork/xiangqi-app-sdk",
   "generator": "@sdkwork/sdk-generator",
   "capabilities": {
     "supportsGeneratedTests": true,
@@ -26,7 +28,5 @@
     "stateRoots": [
       ".sdkwork/"
     ]
-  },
-  "transportPackageName": "sdkwork-xiangqi-app-sdk-generated-typescript",
-  "consumerPackageName": "@sdkwork/xiangqi-app-sdk"
+  }
 }

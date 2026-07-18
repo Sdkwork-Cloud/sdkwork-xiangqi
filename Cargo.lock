@@ -1822,7 +1822,9 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "sdkwork-game-match-service",
+ "sdkwork-utils-rust",
  "sdkwork-web-axum",
+ "sdkwork-web-core",
  "serde",
  "serde_json",
 ]
@@ -1934,10 +1936,25 @@ name = "sdkwork-xiangqi-gateway-assembly"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "sdkwork-iam-web-adapter",
  "sdkwork-routes-match-app-api",
  "sdkwork-routes-match-backend-api",
- "sdkwork-xiangqi-standalone-gateway",
+ "sdkwork-web-axum",
+ "sdkwork-web-contract",
+ "sdkwork-web-core",
+ "sdkwork-xiangqi-service-host",
+ "serde",
+ "serde_json",
  "tokio",
+]
+
+[[package]]
+name = "sdkwork-xiangqi-service-host"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-game-match-repository-sqlx",
+ "sdkwork-game-match-service",
+ "sdkwork-xiangqi-database-host",
 ]
 
 [[package]]
@@ -1946,19 +1963,11 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "http-body-util",
- "sdkwork-game-match-repository-sqlx",
- "sdkwork-game-match-service",
- "sdkwork-iam-context-service",
- "sdkwork-iam-web-adapter",
  "sdkwork-routes-health-app-api",
  "sdkwork-routes-match-app-api",
- "sdkwork-routes-match-backend-api",
  "sdkwork-utils-rust",
- "sdkwork-web-axum",
  "sdkwork-web-bootstrap",
- "sdkwork-web-contract",
- "sdkwork-web-core",
- "sdkwork-xiangqi-database-host",
+ "sdkwork-xiangqi-gateway-assembly",
  "serde",
  "serde_json",
  "tokio",

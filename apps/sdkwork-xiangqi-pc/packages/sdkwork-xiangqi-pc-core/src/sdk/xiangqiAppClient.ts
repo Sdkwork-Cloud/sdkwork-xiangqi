@@ -2,14 +2,14 @@
 
 import {
   createClient,
-  type SdkworkXiangqiAppClient,
+  type SdkworkAppClient,
   type SdkworkAppConfig,
-} from '@sdkwork-internal/xiangqi-app-sdk-generated';
+} from '@sdkwork/xiangqi-app-sdk';
 
 const DEFAULT_DEV_PRINCIPAL =
   'tenant_id=demo-tenant;user_id=user-1;session_id=session-1;app_id=XIANGQI;auth_level=password';
 
-let cachedClient: SdkworkXiangqiAppClient | null = null;
+let cachedClient: SdkworkAppClient | null = null;
 
 export function resolveXIANGQIAppSdkConfig(): SdkworkAppConfig {
   const env = import.meta.env;
@@ -27,7 +27,7 @@ export function resolveXIANGQIAppSdkConfig(): SdkworkAppConfig {
   };
 }
 
-export function getXIANGQIAppClient(): SdkworkXiangqiAppClient {
+export function getXIANGQIAppClient(): SdkworkAppClient {
   if (!cachedClient) {
     cachedClient = createClient(resolveXIANGQIAppSdkConfig());
   }

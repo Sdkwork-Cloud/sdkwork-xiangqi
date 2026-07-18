@@ -6,10 +6,7 @@ use sdkwork_web_core::HttpRouteManifest;
 include!(concat!(env!("OUT_DIR"), "/xiangqi_http_routes.rs"));
 
 pub fn xiangqi_public_path_prefixes() -> Vec<String> {
-    vec![
-        "/app/v3/api/system/health".to_owned(),
-        "/app/v3/api/system/ready".to_owned(),
-    ]
+    vec!["/healthz".to_owned(), "/readyz".to_owned()]
 }
 
 fn default_resolver() -> IamWebRequestContextResolver {

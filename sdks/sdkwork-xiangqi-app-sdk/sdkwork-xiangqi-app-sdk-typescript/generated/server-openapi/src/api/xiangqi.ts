@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { XiangqiApiResult } from '../types';
+import type { XiangqiMatchItem, XiangqiMatchListData } from '../types';
 
 
 export interface XiangqiMatchListParams {
@@ -18,17 +18,17 @@ export class XiangqiMatchApi {
   }
 
 
-async list(params?: XiangqiMatchListParams): Promise<XiangqiApiResult> {
+async list(params?: XiangqiMatchListParams): Promise<XiangqiMatchListData> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
     ]);
-    return this.client.get<XiangqiApiResult>(appendQueryString(appApiPath(`/xiangqi/matches`), query));
+    return this.client.get<XiangqiMatchListData>(appendQueryString(appApiPath(`/xiangqi/matches`), query));
   }
 
-async retrieve(matchId: string): Promise<XiangqiApiResult> {
-    return this.client.get<XiangqiApiResult>(appApiPath(`/xiangqi/matches/${serializePathParameter(matchId, { name: 'matchId', style: 'simple', explode: false })}`));
+async retrieve(matchId: string): Promise<XiangqiMatchItem> {
+    return this.client.get<XiangqiMatchItem>(appApiPath(`/xiangqi/matches/${serializePathParameter(matchId, { name: 'matchId', style: 'simple', explode: false })}`));
   }
 }
 

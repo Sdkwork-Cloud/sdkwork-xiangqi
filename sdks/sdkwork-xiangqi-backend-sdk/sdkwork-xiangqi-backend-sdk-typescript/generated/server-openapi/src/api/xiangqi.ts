@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { XiangqiApiResult } from '../types';
+import type { XiangqiMatchListData } from '../types';
 
 
 export interface XiangqiBackendXiangqiMatchListParams {
@@ -18,13 +18,13 @@ export class XiangqiBackendXiangqiMatchApi {
   }
 
 
-async list(params?: XiangqiBackendXiangqiMatchListParams): Promise<XiangqiApiResult> {
+async list(params?: XiangqiBackendXiangqiMatchListParams): Promise<XiangqiMatchListData> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
     ]);
-    return this.client.get<XiangqiApiResult>(appendQueryString(backendApiPath(`/xiangqi/matches`), query));
+    return this.client.get<XiangqiMatchListData>(appendQueryString(backendApiPath(`/xiangqi/matches`), query));
   }
 }
 

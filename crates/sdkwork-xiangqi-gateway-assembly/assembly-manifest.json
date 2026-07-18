@@ -4,7 +4,7 @@
   "applicationCode": "xiangqi",
   "packageName": "sdkwork-xiangqi-gateway-assembly",
   "crateDir": "crates/sdkwork-xiangqi-gateway-assembly",
-  "generatedAt": "2026-07-16T04:44:51.397Z",
+  "generatedAt": "2026-07-16T17:04:23.579Z",
   "routeCrates": [
     {
       "packageName": "sdkwork-routes-match-app-api",

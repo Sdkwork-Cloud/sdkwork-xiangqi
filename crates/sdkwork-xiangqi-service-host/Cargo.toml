@@ -1,0 +1,11 @@
+[package]
+name = "sdkwork-xiangqi-service-host"
+edition.workspace = true
+version.workspace = true
+license = "Apache-2.0"
+description = "In-process Xiangqi service container for gateway assembly."
+
+[dependencies]
+sdkwork_xiangqi_database_host.workspace = true
+sdkwork_game_match_repository_sqlx.workspace = true
+sdkwork_game_match_service.workspace = true

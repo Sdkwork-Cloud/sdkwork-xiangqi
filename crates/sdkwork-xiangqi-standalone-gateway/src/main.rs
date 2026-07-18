@@ -1,5 +1,6 @@
 use sdkwork_utils_rust::optional::default_if_blank;
-use sdkwork_xiangqi_standalone_gateway::{build_match_service, build_router};
+use sdkwork_xiangqi_gateway_assembly::assemble_application_router;
+use sdkwork_xiangqi_standalone_gateway::build_router_from_business;
 
 #[tokio::main]
 async fn main() {
@@ -18,10 +19,10 @@ async fn main() {
         "127.0.0.1:8098",
     );
 
-    let store = build_match_service()
+    let assembly = assemble_application_router()
         .await
-        .expect("XIANGQI match service bootstrap failed");
-    let app = build_router(store);
+        .expect("XIANGQI gateway assembly failed");
+    let app = build_router_from_business(assembly.router);
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
         .expect("bind XIANGQI standalone-gateway listener failed");

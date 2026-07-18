@@ -1,8 +1,8 @@
 export interface XiangqiMatchItem {
   id: string;
-  matchCode: string;
+  gameCode: string;
   title: string;
   summary?: string;
-  mode?: string;
+  genre?: string;
   status: string;
 }

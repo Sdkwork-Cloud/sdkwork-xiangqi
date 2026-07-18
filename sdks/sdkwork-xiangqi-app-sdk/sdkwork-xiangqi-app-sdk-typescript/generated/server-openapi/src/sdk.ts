@@ -2,19 +2,15 @@ import { HttpClient, createHttpClient } from './http/client';
 import type { SdkworkAppConfig } from './types/common';
 import type { AuthTokenManager } from '@sdkwork/sdk-common';
 
-import { HealthApi, createHealthApi } from './api/health';
 import { XiangqiApi, createXiangqiApi } from './api/xiangqi';
 
 export class SdkworkXiangqiAppClient {
   private httpClient: HttpClient;
 
-  public readonly health: HealthApi;
   public readonly xiangqi: XiangqiApi;
 
   constructor(config: SdkworkAppConfig) {
     this.httpClient = createHttpClient(config);
-    this.health = createHealthApi(this.httpClient);
-
     this.xiangqi = createXiangqiApi(this.httpClient);
   }
   setAuthToken(token: string): this {

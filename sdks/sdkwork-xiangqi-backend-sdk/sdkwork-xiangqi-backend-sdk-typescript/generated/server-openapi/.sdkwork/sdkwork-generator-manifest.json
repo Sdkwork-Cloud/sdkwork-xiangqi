@@ -40,7 +40,7 @@
     },
     {
       "path": "package.json",
-      "sha256": "c8f8696ce3a861f35f676b1bcd6485cceb5685a7a7dbb891d629fa6faf589496"
+      "sha256": "387ab5a37113ed017eb926256834179795d2014b50166403b9a5ef49e4daa16e"
     },
     {
       "path": "README.md",
@@ -48,7 +48,7 @@
     },
     {
       "path": "sdkwork-sdk.json",
-      "sha256": "e11fdda40d3603b382fbc62b4cbc414c9a644d0de503ca5a4bcd06e7a3daa64a"
+      "sha256": "987f1bdd1580ff9ebfd94bc700ba2374a58c0354d341f6dd5396b0c808ceccd8"
     },
     {
       "path": "src/api/base.ts",
@@ -64,7 +64,7 @@
     },
     {
       "path": "src/api/xiangqi.ts",
-      "sha256": "0750ef2297b260538c6527458545f16ee7efa37fbe7e9aaff88dd58b5607631e"
+      "sha256": "2d205326c66c2e24af76166c2a53dc5125d46d151daea286d5f2dc15fe67a3fe"
     },
     {
       "path": "src/auth/index.ts",
@@ -72,7 +72,7 @@
     },
     {
       "path": "src/http/client.ts",
-      "sha256": "1d339275acee6ec54660a32eb9effcc718ebf0992c5e9bfdb80a3452e0702137"
+      "sha256": "6e389d5c14fb5845365972b6776af185d8af8eb8da7bb398e59be6c29e394ddf"
     },
     {
       "path": "src/http/index.ts",
@@ -92,27 +92,39 @@
     },
     {
       "path": "src/types/index.ts",
-      "sha256": "f41e898fcf05d69645d4481f758aaf10f254331c0e527989402e8a175ac3f5fe"
+      "sha256": "7da2c518d6f930347c841993d6afb67ecf3d87e846b3da98cd697fdc27fdc2b0"
+    },
+    {
+      "path": "src/types/page-info.ts",
+      "sha256": "a49c8f4bd6cda7ba5cbdf169d2c95ceeb89db10354dee31fe2cffa35be8a5fd8"
     },
     {
       "path": "src/types/problem-detail.ts",
-      "sha256": "46b7995d1fe77bd7511e83e69fef6a0afaf697d0a0b612d651af5591854453cf"
+      "sha256": "86ddd0a5bee6221fbe98858c8367b19710de87cab86fa63ef1b5aff98c598f2c"
     },
     {
-      "path": "src/types/xiangqi-api-result.ts",
-      "sha256": "e2ed976118bbbef5b1a99547e13668614139bc33f3d80521d63df142b68601b3"
+      "path": "src/types/sdk-work-api-response.ts",
+      "sha256": "b0e8a26047d6002f67c43b0accaebb34d4d7a4d6ba8f77c55ed9bd0a9036cc77"
     },
     {
-      "path": "src/types/xiangqi-health-response.ts",
-      "sha256": "775f391f5247edded06324bc6f70b43aa2c088f92f9e8b4e60d1645b967afaab"
+      "path": "src/types/xiangqi-match-data.ts",
+      "sha256": "dc2f6bc9bf6d493253393f5ec1476983022abc988d04580a1ae2a41518cc0297"
     },
     {
       "path": "src/types/xiangqi-match-item.ts",
-      "sha256": "cd3adcfc472001251dbc5ebde9e6899d8cb28630ce6d8ac25e633f1c162ba998"
+      "sha256": "5b4eecfe053ea1f6191523577a354bbede9f9a03fca34108f4413af4c2f9938a"
     },
     {
-      "path": "src/types/xiangqi-match-page.ts",
-      "sha256": "ae9cbaf6090c48cea078a29093391d586d9d6b4f45b246df6caf86149ab5b638"
+      "path": "src/types/xiangqi-match-list-data.ts",
+      "sha256": "7126da6dbe42d2d8689add05543aba2cf3190e18a547e73c313368696b402547"
+    },
+    {
+      "path": "src/types/xiangqi-match-list-response.ts",
+      "sha256": "1137fb1456ba71d711f0d9f8941dafc6c5250fed0d76fb682d21b04faabc51e1"
+    },
+    {
+      "path": "src/types/xiangqi-match-response.ts",
+      "sha256": "5935b1593a88d36431eecceac6bfcb749360e98d09ba544f393f5b7c46a153e0"
     },
     {
       "path": "tsconfig.json",
