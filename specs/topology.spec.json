@@ -72,8 +72,8 @@
   },
   "components": {
     "applicationServer": {
-      "crate": "sdkwork-xiangqi-standalone-gateway",
-      "binary": "sdkwork-xiangqi-standalone-gateway"
+      "crate": "sdkwork-api-xiangqi-standalone-gateway",
+      "binary": "sdkwork-api-xiangqi-standalone-gateway"
     }
   },
   "orchestration": {
@@ -82,8 +82,8 @@
         "processes": [
           {
             "id": "application.public-ingress",
-            "crate": "sdkwork-xiangqi-standalone-gateway",
-            "binary": "sdkwork-xiangqi-standalone-gateway",
+            "crate": "sdkwork-api-xiangqi-standalone-gateway",
+            "binary": "sdkwork-api-xiangqi-standalone-gateway",
             "required": true,
             "role": "api-standalone-gateway"
           }
@@ -103,8 +103,8 @@
         "processes": [
           {
             "id": "application.public-ingress",
-            "crate": "sdkwork-xiangqi-standalone-gateway",
-            "binary": "sdkwork-xiangqi-standalone-gateway",
+            "crate": "sdkwork-api-xiangqi-standalone-gateway",
+            "binary": "sdkwork-api-xiangqi-standalone-gateway",
             "required": true,
             "role": "api-standalone-gateway"
           }
@@ -118,8 +118,8 @@
         "processes": [
           {
             "id": "application.public-ingress",
-            "crate": "sdkwork-xiangqi-standalone-gateway",
-            "binary": "sdkwork-xiangqi-standalone-gateway",
+            "crate": "sdkwork-api-xiangqi-standalone-gateway",
+            "binary": "sdkwork-api-xiangqi-standalone-gateway",
             "required": true,
             "role": "api-standalone-gateway"
           }

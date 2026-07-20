@@ -2,8 +2,8 @@
 resolver = "2"
 members = [
     "crates/sdkwork-api-xiangqi-assembly",
-    "crates/sdkwork-xiangqi-gateway-assembly",
-    "crates/sdkwork-xiangqi-standalone-gateway",
+    "crates/sdkwork-api-xiangqi-assembly",
+    "crates/sdkwork-api-xiangqi-standalone-gateway",
     "crates/sdkwork-xiangqi-service-host",
     "crates/sdkwork-xiangqi-database-host",
     "crates/sdkwork-game-match-service",
@@ -18,8 +18,8 @@ edition = "2021"
 version = "0.1.0"
 
 [workspace.dependencies]
-sdkwork_xiangqi_standalone_gateway = { package = "sdkwork-xiangqi-standalone-gateway", path = "crates/sdkwork-xiangqi-standalone-gateway" }
-sdkwork_xiangqi_gateway_assembly = { package = "sdkwork-xiangqi-gateway-assembly", path = "crates/sdkwork-xiangqi-gateway-assembly" }
+sdkwork_api_xiangqi_standalone_gateway = { package = "sdkwork-api-xiangqi-standalone-gateway", path = "crates/sdkwork-api-xiangqi-standalone-gateway" }
+sdkwork_api_xiangqi_assembly = { package = "sdkwork-api-xiangqi-assembly", path = "crates/sdkwork-api-xiangqi-assembly" }
 sdkwork_xiangqi_service_host = { package = "sdkwork-xiangqi-service-host", path = "crates/sdkwork-xiangqi-service-host" }
 sdkwork_xiangqi_database_host = { package = "sdkwork-xiangqi-database-host", path = "crates/sdkwork-xiangqi-database-host" }
 sdkwork_game_match_service = { package = "sdkwork-game-match-service", path = "crates/sdkwork-game-match-service" }

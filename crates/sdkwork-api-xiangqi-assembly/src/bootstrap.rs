@@ -1,13 +1,33 @@
-//! API assembly bootstrap for sdkwork-xiangqi.
+//! Gateway bootstrap for sdkwork-xiangqi.
 
 use axum::Router;
+use sdkwork_routes_match_app_api::build_match_app_router;
+use sdkwork_routes_match_backend_api::build_match_backend_router;
+use sdkwork_xiangqi_service_host::{build_match_service, SharedMatchService};
+
+use crate::web_bootstrap::{
+    with_xiangqi_app_request_context, with_xiangqi_backend_request_context,
+};
 
 pub struct ApiAssembly {
     pub router: Router,
 }
 
-pub fn assemble_api_router() -> ApiAssembly {
+pub async fn assemble_api_router() -> Result<ApiAssembly, String> {
+    let service = build_match_service().await?;
+    Ok(assemble_api_router_with_service(service))
+}
+
+pub fn assemble_api_router_with_service(
+    service: SharedMatchService,
+) -> ApiAssembly {
+    let app = with_xiangqi_app_request_context(build_match_app_router(service.clone()));
+    let backend = with_xiangqi_backend_request_context(build_match_backend_router(service));
     ApiAssembly {
-        router: Router::new(),
+        router: Router::new().merge(app).merge(backend),
     }
+}
+
+pub async fn assemble_api_router() -> Result<ApiAssembly, String> {
+    assemble_api_router().await
 }

@@ -1,6 +1,6 @@
 use sdkwork_utils_rust::optional::default_if_blank;
-use sdkwork_xiangqi_gateway_assembly::assemble_application_router;
-use sdkwork_xiangqi_standalone_gateway::build_router_from_business;
+use sdkwork_api_xiangqi_assembly::assemble_api_router;
+use sdkwork_api_xiangqi_standalone_gateway::build_router_from_business;
 
 #[tokio::main]
 async fn main() {
@@ -19,14 +19,14 @@ async fn main() {
         "127.0.0.1:8098",
     );
 
-    let assembly = assemble_application_router()
+    let assembly = assemble_api_router()
         .await
         .expect("XIANGQI gateway assembly failed");
     let app = build_router_from_business(assembly.router);
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
         .expect("bind XIANGQI standalone-gateway listener failed");
-    tracing::info!("sdkwork-xiangqi-standalone-gateway listening on {bind_address}");
+    tracing::info!("sdkwork-api-xiangqi-standalone-gateway listening on {bind_address}");
     axum::serve(listener, app)
         .await
         .expect("serve XIANGQI standalone-gateway failed");

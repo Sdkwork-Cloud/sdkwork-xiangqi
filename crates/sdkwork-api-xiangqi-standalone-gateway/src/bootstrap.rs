@@ -1,14 +1,14 @@
 use axum::Router;
 use sdkwork_routes_health_app_api::build_health_router;
-use sdkwork_xiangqi_gateway_assembly::{
-    assemble_application_business_router_with_service, with_xiangqi_app_request_context,
+use sdkwork_api_xiangqi_assembly::{
+    assemble_api_router_with_service, with_xiangqi_app_request_context,
 };
-pub use sdkwork_xiangqi_gateway_assembly::{
+pub use sdkwork_api_xiangqi_assembly::{
     build_match_service, build_memory_match_service, SharedMatchService,
 };
 
 pub fn build_router(store: SharedMatchService) -> Router {
-    let business = assemble_application_business_router_with_service(store).router;
+    let business = assemble_api_router_with_service(store).router;
     build_router_from_business(business)
 }
 

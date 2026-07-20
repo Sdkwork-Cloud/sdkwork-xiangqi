@@ -3,7 +3,7 @@ use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_routes_match_app_api::build_match_app_router;
 use sdkwork_web_core::{access_token_jwt, auth_token_jwt};
-use sdkwork_xiangqi_standalone_gateway::{
+use sdkwork_api_xiangqi_standalone_gateway::{
     build_memory_match_service, with_xiangqi_app_request_context,
 };
 use tower::ServiceExt;
@@ -79,7 +79,7 @@ async fn build_router_merges_health_and_match_routes() {
         .unwrap_or_else(|poisoned| poisoned.into_inner());
     std::env::set_var("SDKWORK_IAM_ALLOW_DEV_AUTH_FALLBACK", "true");
     let (auth_token, access_token) = dev_tokens();
-    let router = sdkwork_xiangqi_standalone_gateway::build_router(build_memory_match_service());
+    let router = sdkwork_api_xiangqi_standalone_gateway::build_router(build_memory_match_service());
 
     for uri in ["/healthz", "/readyz", "/app/v3/api/xiangqi/matches"] {
         let mut builder = Request::builder().uri(uri);
