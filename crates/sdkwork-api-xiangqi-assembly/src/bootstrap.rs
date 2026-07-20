@@ -13,7 +13,7 @@ pub struct ApiAssembly {
     pub router: Router,
 }
 
-pub async fn assemble_api_router() -> Result<ApiAssembly, String> {
+pub async fn assemble_business_routes() -> Result<ApiAssembly, String> {
     let service = build_match_service().await?;
     Ok(assemble_api_router_with_service(service))
 }
@@ -28,6 +28,6 @@ pub fn assemble_api_router_with_service(
     }
 }
 
-pub async fn assemble_api_router() -> Result<ApiAssembly, String> {
+pub async fn assemble_business_routes() -> Result<ApiAssembly, String> {
     assemble_api_router().await
 }
