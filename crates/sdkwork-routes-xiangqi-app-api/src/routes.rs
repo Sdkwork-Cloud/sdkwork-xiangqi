@@ -2,8 +2,8 @@ use axum::extract::{Path, Query, State};
 use axum::response::Response;
 use axum::routing::get;
 use axum::Router;
-use sdkwork_game_match_service::{GameMatchQuery, GameMatchRepository, GameMatchService};
 use sdkwork_web_axum::{extractors::WebRequestContext, RequirePrincipal};
+use sdkwork_xiangqi_match_service::{GameMatchQuery, GameMatchRepository, GameMatchService};
 use std::sync::Arc;
 
 use crate::error::{map_match_error, ok_page_envelope, ok_resource_envelope};

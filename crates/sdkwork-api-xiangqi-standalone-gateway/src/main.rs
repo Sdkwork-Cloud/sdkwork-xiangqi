@@ -1,6 +1,6 @@
-use sdkwork_utils_rust::optional::default_if_blank;
 use sdkwork_api_xiangqi_assembly::assemble_api_router;
 use sdkwork_api_xiangqi_standalone_gateway::build_router_from_business;
+use sdkwork_utils_rust::optional::default_if_blank;
 
 #[tokio::main]
 async fn main() {

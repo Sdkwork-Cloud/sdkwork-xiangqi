@@ -1631,8 +1631,8 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "sdkwork-iam-web-adapter",
- "sdkwork-routes-match-app-api",
- "sdkwork-routes-match-backend-api",
+ "sdkwork-routes-xiangqi-app-api",
+ "sdkwork-routes-xiangqi-backend-api",
  "sdkwork-web-axum",
  "sdkwork-web-contract",
  "sdkwork-web-core",
@@ -1649,10 +1649,10 @@ dependencies = [
  "axum",
  "http-body-util",
  "sdkwork-api-xiangqi-assembly",
- "sdkwork-routes-health-app-api",
- "sdkwork-routes-match-app-api",
+ "sdkwork-routes-xiangqi-app-api",
  "sdkwork-utils-rust",
  "sdkwork-web-bootstrap",
+ "sdkwork-web-core",
  "serde",
  "serde_json",
  "tokio",
@@ -1743,31 +1743,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-game-match-repository-sqlx"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "sdkwork-database-sqlx",
- "sdkwork-game-match-service",
- "sdkwork-utils-rust",
- "serde",
- "sqlx",
- "tokio",
-]
-
-[[package]]
-name = "sdkwork-game-match-service"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "pretty_assertions",
- "sdkwork-utils-rust",
- "serde",
- "serde_json",
- "tokio",
-]
-
-[[package]]
 name = "sdkwork-iam-bootstrap"
 version = "0.1.0"
 dependencies = [
@@ -1847,35 +1822,26 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-routes-health-app-api"
+name = "sdkwork-routes-xiangqi-app-api"
 version = "0.1.0"
 dependencies = [
  "axum",
- "sdkwork-web-core",
- "serde_json",
-]
-
-[[package]]
-name = "sdkwork-routes-match-app-api"
-version = "0.1.0"
-dependencies = [
- "axum",
- "sdkwork-game-match-service",
  "sdkwork-utils-rust",
  "sdkwork-web-axum",
  "sdkwork-web-core",
+ "sdkwork-xiangqi-match-service",
  "serde",
  "serde_json",
 ]
 
 [[package]]
-name = "sdkwork-routes-match-backend-api"
+name = "sdkwork-routes-xiangqi-backend-api"
 version = "0.1.0"
 dependencies = [
  "axum",
- "sdkwork-game-match-service",
- "sdkwork-routes-match-app-api",
+ "sdkwork-routes-xiangqi-app-api",
  "sdkwork-web-axum",
+ "sdkwork-xiangqi-match-service",
 ]
 
 [[package]]
@@ -1971,12 +1937,37 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-xiangqi-match-repository-sqlx"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "sdkwork-database-sqlx",
+ "sdkwork-utils-rust",
+ "sdkwork-xiangqi-match-service",
+ "serde",
+ "sqlx",
+ "tokio",
+]
+
+[[package]]
+name = "sdkwork-xiangqi-match-service"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "pretty_assertions",
+ "sdkwork-utils-rust",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "sdkwork-xiangqi-service-host"
 version = "0.1.0"
 dependencies = [
- "sdkwork-game-match-repository-sqlx",
- "sdkwork-game-match-service",
  "sdkwork-xiangqi-database-host",
+ "sdkwork-xiangqi-match-repository-sqlx",
+ "sdkwork-xiangqi-match-service",
 ]
 
 [[package]]

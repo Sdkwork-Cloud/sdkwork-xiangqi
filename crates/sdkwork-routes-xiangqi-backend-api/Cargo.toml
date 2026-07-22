@@ -1,16 +1,16 @@
 [package]
-name = "sdkwork-routes-match-backend-api"
+name = "sdkwork-routes-xiangqi-backend-api"
 version.workspace = true
 edition.workspace = true
 license = "Apache-2.0"
 description = "SDKWork Xiangqi match backend-api router."
 
 [lib]
-name = "sdkwork_routes_match_backend_api"
+name = "sdkwork_routes_xiangqi_backend_api"
 path = "src/lib.rs"
 
 [dependencies]
 axum.workspace = true
-sdkwork_game_match_service.workspace = true
-sdkwork_routes_match_app_api.workspace = true
+sdkwork_xiangqi_match_service.workspace = true
+sdkwork_routes_xiangqi_app_api.workspace = true
 sdkwork-web-axum.workspace = true

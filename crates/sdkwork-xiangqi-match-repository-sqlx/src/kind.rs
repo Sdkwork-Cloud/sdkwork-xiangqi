@@ -1,5 +1,5 @@
 use async_trait::async_trait;
-use sdkwork_game_match_service::{
+use sdkwork_xiangqi_match_service::{
     GameMatchItem, GameMatchPage, GameMatchQuery, GameMatchRepository, GameResult,
 };
 

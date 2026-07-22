@@ -7,26 +7,26 @@
   "crateDir": "crates/sdkwork-api-xiangqi-assembly",
   "routeCrates": [
     {
-      "packageName": "sdkwork-routes-match-app-api",
-      "memberDir": "crates/sdkwork-routes-match-app-api",
-      "libName": "sdkwork_routes_match_app_api",
+      "packageName": "sdkwork-routes-xiangqi-app-api",
+      "memberDir": "crates/sdkwork-routes-xiangqi-app-api",
+      "libName": "sdkwork_routes_xiangqi_app_api",
       "surface": "app-api",
       "pathPrefix": null,
       "mountOrder": 0,
-      "componentRef": "crates/sdkwork-routes-match-app-api/specs/component.spec.json",
-      "routeManifestRef": "sdks/_route-manifests/app-api/sdkwork-routes-match-app-api.route-manifest.json",
-      "sourceRef": "crates/sdkwork-routes-match-app-api/Cargo.toml"
+      "componentRef": "crates/sdkwork-routes-xiangqi-app-api/specs/component.spec.json",
+      "routeManifestRef": "sdks/_route-manifests/app-api/sdkwork-routes-xiangqi-app-api.route-manifest.json",
+      "sourceRef": "crates/sdkwork-routes-xiangqi-app-api/Cargo.toml"
     },
     {
-      "packageName": "sdkwork-routes-match-backend-api",
-      "memberDir": "crates/sdkwork-routes-match-backend-api",
-      "libName": "sdkwork_routes_match_backend_api",
+      "packageName": "sdkwork-routes-xiangqi-backend-api",
+      "memberDir": "crates/sdkwork-routes-xiangqi-backend-api",
+      "libName": "sdkwork_routes_xiangqi_backend_api",
       "surface": "backend-api",
       "pathPrefix": null,
       "mountOrder": 1,
-      "componentRef": "crates/sdkwork-routes-match-backend-api/specs/component.spec.json",
-      "routeManifestRef": "sdks/_route-manifests/backend-api/sdkwork-routes-match-backend-api.route-manifest.json",
-      "sourceRef": "crates/sdkwork-routes-match-backend-api/Cargo.toml"
+      "componentRef": "crates/sdkwork-routes-xiangqi-backend-api/specs/component.spec.json",
+      "routeManifestRef": "sdks/_route-manifests/backend-api/sdkwork-routes-xiangqi-backend-api.route-manifest.json",
+      "sourceRef": "crates/sdkwork-routes-xiangqi-backend-api/Cargo.toml"
     }
   ]
 }

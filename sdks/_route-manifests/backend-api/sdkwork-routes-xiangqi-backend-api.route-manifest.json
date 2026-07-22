@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "sdkwork.route.manifest",
-  "packageName": "sdkwork-routes-match-backend-api",
+  "packageName": "sdkwork-routes-xiangqi-backend-api",
   "surface": "backend-api",
   "owner": "sdkwork-xiangqi",
   "domain": "game",
@@ -10,8 +10,8 @@
   "sdkFamily": "sdkwork-xiangqi-backend-sdk",
   "prefix": "/backend/v3/api",
   "source": {
-    "crateRoot": "crates/sdkwork-routes-match-backend-api",
-    "crateImport": "sdkwork_routes_match_backend_api",
+    "crateRoot": "crates/sdkwork-routes-xiangqi-backend-api",
+    "crateImport": "sdkwork_routes_xiangqi_backend_api",
     "openapiAuthority": "apis/backend-api/game/xiangqi-backend-api.openapi.json"
   },
   "routes": [

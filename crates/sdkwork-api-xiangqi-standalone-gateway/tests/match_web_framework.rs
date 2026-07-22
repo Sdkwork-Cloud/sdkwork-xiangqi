@@ -1,11 +1,11 @@
 use axum::body::to_bytes;
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_routes_match_app_api::build_match_app_router;
-use sdkwork_web_core::{access_token_jwt, auth_token_jwt};
 use sdkwork_api_xiangqi_standalone_gateway::{
     build_memory_match_service, with_xiangqi_app_request_context,
 };
+use sdkwork_routes_xiangqi_app_api::build_match_app_router;
+use sdkwork_web_core::{access_token_jwt, auth_token_jwt};
 use tower::ServiceExt;
 
 static DEV_AUTH_ENV_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
@@ -73,7 +73,7 @@ async fn match_router_accepts_dev_inline_dual_tokens() {
 }
 
 #[tokio::test]
-async fn build_router_merges_health_and_match_routes() {
+async fn build_router_mounts_infrastructure_and_match_routes() {
     let _env_guard = DEV_AUTH_ENV_LOCK
         .lock()
         .unwrap_or_else(|poisoned| poisoned.into_inner());
@@ -81,7 +81,13 @@ async fn build_router_merges_health_and_match_routes() {
     let (auth_token, access_token) = dev_tokens();
     let router = sdkwork_api_xiangqi_standalone_gateway::build_router(build_memory_match_service());
 
-    for uri in ["/healthz", "/readyz", "/app/v3/api/xiangqi/matches"] {
+    for uri in [
+        "/healthz",
+        "/livez",
+        "/readyz",
+        "/metrics",
+        "/app/v3/api/xiangqi/matches",
+    ] {
         let mut builder = Request::builder().uri(uri);
         if uri.contains("/xiangqi/matches") {
             builder = builder

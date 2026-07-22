@@ -1,8 +1,8 @@
 //! Gateway bootstrap for sdkwork-xiangqi.
 
 use axum::Router;
-use sdkwork_routes_match_app_api::build_match_app_router;
-use sdkwork_routes_match_backend_api::build_match_backend_router;
+use sdkwork_routes_xiangqi_app_api::build_match_app_router;
+use sdkwork_routes_xiangqi_backend_api::build_match_backend_router;
 use sdkwork_xiangqi_service_host::{build_match_service, SharedMatchService};
 
 use crate::web_bootstrap::{

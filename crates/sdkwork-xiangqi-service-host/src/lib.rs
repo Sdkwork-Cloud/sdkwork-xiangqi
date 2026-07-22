@@ -1,11 +1,11 @@
 use std::sync::Arc;
 
-use sdkwork_game_match_repository_sqlx::{
+use sdkwork_xiangqi_database_host::bootstrap_xiangqi_database_from_env;
+use sdkwork_xiangqi_match_repository_sqlx::{
     memory_match_repository, GameMatchRepositoryKind, InMemoryGameMatchRepository,
     SqlxGameMatchRepository,
 };
-use sdkwork_game_match_service::GameMatchService;
-use sdkwork_xiangqi_database_host::bootstrap_xiangqi_database_from_env;
+use sdkwork_xiangqi_match_service::GameMatchService;
 
 pub type SharedMatchService = Arc<GameMatchService<GameMatchRepositoryKind>>;
 
