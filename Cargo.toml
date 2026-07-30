@@ -2,7 +2,6 @@
 resolver = "2"
 members = [
     "crates/sdkwork-api-xiangqi-assembly",
-    "crates/sdkwork-api-xiangqi-assembly",
     "crates/sdkwork-api-xiangqi-standalone-gateway",
     "crates/sdkwork-xiangqi-service-host",
     "crates/sdkwork-xiangqi-database-host",

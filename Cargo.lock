@@ -1630,16 +1630,18 @@ name = "sdkwork-api-xiangqi-assembly"
 version = "0.1.0"
 dependencies = [
  "axum",
- "sdkwork-iam-web-adapter",
+ "http-body-util",
+ "sdkwork-database-sqlx",
  "sdkwork-routes-xiangqi-app-api",
  "sdkwork-routes-xiangqi-backend-api",
- "sdkwork-web-axum",
- "sdkwork-web-contract",
+ "sdkwork-web-bootstrap",
  "sdkwork-web-core",
+ "sdkwork-xiangqi-match-repository-sqlx",
+ "sdkwork-xiangqi-match-service",
  "sdkwork-xiangqi-service-host",
- "serde",
  "serde_json",
  "tokio",
+ "tower",
 ]
 
 [[package]]
@@ -1647,16 +1649,11 @@ name = "sdkwork-api-xiangqi-standalone-gateway"
 version = "0.1.0"
 dependencies = [
  "axum",
- "http-body-util",
  "sdkwork-api-xiangqi-assembly",
- "sdkwork-routes-xiangqi-app-api",
+ "sdkwork-iam-web-adapter",
  "sdkwork-utils-rust",
  "sdkwork-web-bootstrap",
- "sdkwork-web-core",
- "serde",
- "serde_json",
  "tokio",
- "tower",
  "tower-http",
  "tracing",
  "tracing-subscriber",
@@ -1671,6 +1668,7 @@ dependencies = [
  "thiserror",
  "toml",
  "tracing",
+ "url",
 ]
 
 [[package]]
@@ -1841,6 +1839,7 @@ dependencies = [
  "axum",
  "sdkwork-routes-xiangqi-app-api",
  "sdkwork-web-axum",
+ "sdkwork-web-core",
  "sdkwork-xiangqi-match-service",
 ]
 
@@ -1888,6 +1887,7 @@ dependencies = [
  "sdkwork-web-axum",
  "sdkwork-web-contract",
  "sdkwork-web-core",
+ "sdkwork-web-store-sqlx",
  "serde",
  "serde_json",
  "sqlx",
@@ -1923,6 +1923,33 @@ dependencies = [
  "sha2",
  "tokio",
  "tracing",
+]
+
+[[package]]
+name = "sdkwork-web-store-sqlx"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "sdkwork-database-config",
+ "sdkwork-database-sqlx",
+ "sdkwork-web-core",
+ "sdkwork-webstore-database-host",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
+name = "sdkwork-webstore-database-host"
+version = "0.1.0"
+dependencies = [
+ "dotenvy",
+ "sdkwork-database-config",
+ "sdkwork-database-lifecycle",
+ "sdkwork-database-spi",
+ "sdkwork-database-sqlx",
 ]
 
 [[package]]
@@ -1965,6 +1992,7 @@ dependencies = [
 name = "sdkwork-xiangqi-service-host"
 version = "0.1.0"
 dependencies = [
+ "sdkwork-database-sqlx",
  "sdkwork-xiangqi-database-host",
  "sdkwork-xiangqi-match-repository-sqlx",
  "sdkwork-xiangqi-match-service",

@@ -6,12 +6,12 @@ use sdkwork_database_lifecycle::{lifecycle_options_from_env, LifecycleOrchestrat
 use sdkwork_database_spi::{DatabaseAssetProvider, DatabaseManifest, DefaultDatabaseModule};
 use sdkwork_database_sqlx::{create_pool_from_config, DatabasePool};
 
-pub struct XIANGQIDatabaseHost {
+pub struct XiangqiDatabaseHost {
     pool: DatabasePool,
     module: Arc<DefaultDatabaseModule>,
 }
 
-impl XIANGQIDatabaseHost {
+impl XiangqiDatabaseHost {
     pub fn pool(&self) -> &DatabasePool {
         &self.pool
     }
@@ -21,7 +21,7 @@ impl XIANGQIDatabaseHost {
     }
 }
 
-pub async fn bootstrap_xiangqi_database(pool: DatabasePool) -> Result<XIANGQIDatabaseHost, String> {
+pub async fn bootstrap_xiangqi_database(pool: DatabasePool) -> Result<XiangqiDatabaseHost, String> {
     let app_root = resolve_app_root();
     let module = Arc::new(
         DefaultDatabaseModule::from_app_root(&app_root)
@@ -45,10 +45,10 @@ pub async fn bootstrap_xiangqi_database(pool: DatabasePool) -> Result<XIANGQIDat
             .map_err(|error| format!("XIANGQI database migrate failed: {error}"))?;
     }
 
-    Ok(XIANGQIDatabaseHost { pool, module })
+    Ok(XiangqiDatabaseHost { pool, module })
 }
 
-pub async fn bootstrap_xiangqi_database_from_env() -> Result<XIANGQIDatabaseHost, String> {
+pub async fn bootstrap_xiangqi_database_from_env() -> Result<XiangqiDatabaseHost, String> {
     let _ = dotenvy::dotenv();
     let config = DatabaseConfig::from_env("XIANGQI")
         .map_err(|error| format!("read XIANGQI database config failed: {error}"))?;
@@ -59,7 +59,7 @@ pub async fn bootstrap_xiangqi_database_from_env() -> Result<XIANGQIDatabaseHost
 }
 
 fn resolve_app_root() -> PathBuf {
-    std::env::var("sdkwork_xiangqi_APP_ROOT")
+    std::env::var("SDKWORK_XIANGQI_APP_ROOT")
         .map(PathBuf::from)
         .unwrap_or_else(|_| {
             PathBuf::from(env!("CARGO_MANIFEST_DIR"))

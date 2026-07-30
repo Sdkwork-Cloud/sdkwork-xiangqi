@@ -12,11 +12,14 @@
   },
   "contracts": {
     "publicExports": ["."],
-    "runtimeEntrypoints": [],
+    "runtimeEntrypoints": [
+      "XiangqiServiceHost::from_env",
+      "XiangqiServiceHost::from_pool"
+    ],
     "sdkDependencies": [],
     "dependencyApiExports": [],
     "dependencyApiSurfaces": [],
     "events": [],
-    "configKeys": ["XIANGQI_REPOSITORY_MODE"]
+    "configKeys": []
   }
 }
