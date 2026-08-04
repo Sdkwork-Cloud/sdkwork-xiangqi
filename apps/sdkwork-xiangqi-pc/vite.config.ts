@@ -19,10 +19,6 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
-        '@sdkwork-internal/xiangqi-app-sdk-generated': path.resolve(
-          XIANGQIAppSdkRoot,
-          'src/index.ts',
-        ),
       },
     },
     server: {
