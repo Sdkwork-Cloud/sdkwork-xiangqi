@@ -28,7 +28,7 @@
     "dependencyApiExports": [],
     "dependencyApiSurfaces": [],
     "events": [],
-    "configKeys": ["XIANGQI_DATABASE_URL", "SDKWORK_XIANGQI_APP_ROOT"]
+    "configKeys": ["SDKWORK_DATABASE_*", "SDKWORK_XIANGQI_APP_ROOT"]
   },
   "verification": {
     "commands": ["cargo check -p sdkwork-xiangqi-database-host"]

@@ -54,7 +54,7 @@
     "routeManifest": "sdks/_route-manifests/app-api/sdkwork-routes-xiangqi-app-api.route-manifest.json",
     "sdkClients": ["sdkwork-xiangqi-app-sdk", "sdkwork-xiangqi-backend-sdk"],
     "events": [],
-    "configKeys": ["XIANGQI_DATABASE_URL", "SDKWORK_XIANGQI_APP_ROOT"]
+    "configKeys": ["SDKWORK_DATABASE_*", "SDKWORK_XIANGQI_APP_ROOT"]
   },
   "verification": {
     "commands": ["pnpm verify"]
