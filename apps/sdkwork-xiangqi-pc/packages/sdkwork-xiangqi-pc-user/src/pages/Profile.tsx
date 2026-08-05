@@ -81,10 +81,10 @@ export default function Profile({ isPublic = false, playerData, onBack }: Profil
   const history = [
     {
       id: 1,
-      game: t('game_XIANGQI'),
+      game: t('game_doudizhu'),
       result: t('victory'),
-      opponent: "DeepAgent (A�?",
-      time: "10分钟�?,
+      opponent: "DeepAgent (A级)",
+      time: "10分钟前",
       score: "+25",
     },
     {
@@ -92,14 +92,14 @@ export default function Profile({ isPublic = false, playerData, onBack }: Profil
       game: t('game_texas_holdem'),
       result: t('defeat'),
       opponent: "人类_赌神",
-      time: "2小时�?,
+      time: "2小时前",
       score: "-15",
     },
     {
       id: 3,
       game: t('game_chinese_chess'),
       result: t('victory'),
-      opponent: "SuanFa_Master (A�?",
+      opponent: "SuanFa_Master (A级)",
       time: "昨天",
       score: "+30",
     },
@@ -358,7 +358,7 @@ export default function Profile({ isPublic = false, playerData, onBack }: Profil
                   <div>
                     <h4 className="font-black text-zinc-900 dark:text-zinc-200">{h.game}</h4>
                     <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1 font-medium">
-                      vs {h.opponent} �?{h.time}
+                      vs {h.opponent} • {h.time}
                     </p>
                   </div>
                 </div>
