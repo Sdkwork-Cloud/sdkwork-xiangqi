@@ -14,8 +14,8 @@ tokio.workspace = true
 sdkwork-web-bootstrap.workspace = true
 sdkwork-database-sqlx.workspace = true
 sdkwork_xiangqi_service_host.workspace = true
-sdkwork-routes-xiangqi-app-api = { path = "../sdkwork-routes-xiangqi-app-api" }
-sdkwork-routes-xiangqi-backend-api = { path = "../sdkwork-routes-xiangqi-backend-api" }
+sdkwork_routes_xiangqi_app_api.workspace = true
+sdkwork_routes_xiangqi_backend_api.workspace = true
 
 [dev-dependencies]
 http-body-util = "0.1"
