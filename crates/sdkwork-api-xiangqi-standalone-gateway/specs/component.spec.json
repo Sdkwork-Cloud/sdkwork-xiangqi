@@ -34,7 +34,8 @@
     "requiredPorts": [
       {
         "name": "applicationApiAssembly",
-        "export": "sdkwork-api-xiangqi-assembly"
+        "export": "sdkwork_api_xiangqi_assembly::assemble_api_router",
+        "provider": "sdkwork-api-xiangqi-assembly"
       }
     ],
     "runtimeEntrypoints": ["src/main.rs"],
