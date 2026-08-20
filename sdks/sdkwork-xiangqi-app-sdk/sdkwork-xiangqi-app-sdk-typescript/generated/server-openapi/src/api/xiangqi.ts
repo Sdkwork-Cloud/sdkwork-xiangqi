@@ -1,5 +1,5 @@
 import { appApiPath } from './paths';
-import type { HttpClient } from '../http/client';
+import type { ApiRequestOptions, HttpClient } from '../http/client';
 
 import type { XiangqiMatchItem, XiangqiMatchListData } from '../types';
 
@@ -18,26 +18,24 @@ export class XiangqiMatchApi {
   }
 
 
-async list(params?: XiangqiMatchListParams): Promise<XiangqiMatchListData> {
+async list(params?: XiangqiMatchListParams, requestOptions?: ApiRequestOptions): Promise<XiangqiMatchListData> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
     ]);
-    return this.client.get<XiangqiMatchListData>(appendQueryString(appApiPath(`/xiangqi/matches`), query));
+    return this.client.request<XiangqiMatchListData>(appendQueryString(appApiPath(`/xiangqi/matches`), query), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'GET' as any, sdkworkUnwrapKind: 'page' });
   }
 
-async retrieve(matchId: string): Promise<XiangqiMatchItem> {
-    return this.client.get<XiangqiMatchItem>(appApiPath(`/xiangqi/matches/${serializePathParameter(matchId, { name: 'matchId', style: 'simple', explode: false })}`));
+async retrieve(matchId: string, requestOptions?: ApiRequestOptions): Promise<XiangqiMatchItem> {
+    return this.client.request<XiangqiMatchItem>(appApiPath(`/xiangqi/matches/${serializePathParameter(matchId, { name: 'matchId', style: 'simple', explode: false })}`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'GET' as any, sdkworkUnwrapKind: 'item' });
   }
 }
 
 export class XiangqiApi {
-  private client: HttpClient;
   public readonly match: XiangqiMatchApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.match = new XiangqiMatchApi(client);
   }
 

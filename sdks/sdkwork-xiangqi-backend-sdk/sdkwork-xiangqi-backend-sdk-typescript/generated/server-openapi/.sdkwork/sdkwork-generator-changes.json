@@ -9,35 +9,25 @@
     "protocol": "http",
     "packageName": "@sdkwork-internal/xiangqi-backend-sdk-generated"
   },
-  "changeFingerprint": "a463a4ca9ad1a2bec3d483ab082d6c290e37b1524ec4e3c1f3e95447993c61c4",
+  "changeFingerprint": "cdbb2592ff25549f0dd737c8c35579591e91dacdbeb1f2164745d01b917281cd",
   "changes": {
-    "createdGeneratedFiles": [
-      "src/types/page-info.ts",
-      "src/types/sdk-work-api-response.ts",
-      "src/types/xiangqi-match-data.ts",
-      "src/types/xiangqi-match-list-data.ts",
-      "src/types/xiangqi-match-list-response.ts",
-      "src/types/xiangqi-match-response.ts"
-    ],
+    "createdGeneratedFiles": [],
     "updatedGeneratedFiles": [
+      "bin/publish-core.mjs",
       "package.json",
-      "sdkwork-sdk.json",
+      "README.md",
+      "src/api/base.ts",
       "src/api/xiangqi.ts",
-      "src/http/client.ts",
-      "src/types/index.ts",
-      "src/types/problem-detail.ts",
-      "src/types/xiangqi-match-item.ts"
+      "src/http/client.ts"
     ],
     "unchangedGeneratedFiles": [
-      "bin/publish-core.mjs",
       "bin/publish.ps1",
       "bin/publish.sh",
       "bin/sdk-gen.bat",
       "bin/sdk-gen.sh",
       "CHANGELOG.md",
       "LICENSE",
-      "README.md",
-      "src/api/base.ts",
+      "sdkwork-sdk.json",
       "src/api/index.ts",
       "src/api/paths.ts",
       "src/auth/index.ts",
@@ -45,54 +35,43 @@
       "src/index.ts",
       "src/sdk.ts",
       "src/types/common.ts",
+      "src/types/index.ts",
+      "src/types/page-info.ts",
+      "src/types/problem-detail.ts",
+      "src/types/sdk-work-api-response.ts",
+      "src/types/xiangqi-match-data.ts",
+      "src/types/xiangqi-match-item.ts",
+      "src/types/xiangqi-match-list-data.ts",
+      "src/types/xiangqi-match-list-response.ts",
+      "src/types/xiangqi-match-response.ts",
       "tsconfig.json"
     ],
-    "deletedGeneratedFiles": [
-      "src/types/xiangqi-api-result.ts",
-      "src/types/xiangqi-health-response.ts",
-      "src/types/xiangqi-match-page.ts"
-    ],
+    "deletedGeneratedFiles": [],
     "scaffoldedFiles": [],
     "preservedScaffoldFiles": [
       "custom/build-runtime.mjs",
       "custom/README.md"
     ],
     "backedUpFiles": [
-      "package.json",
-      "sdkwork-sdk.json"
+      "package.json"
     ]
   },
   "impact": {
     "schemaVersion": 1,
     "areas": [
       "api-surface",
-      "models",
       "runtime",
-      "build-metadata"
+      "build-metadata",
+      "publish-workflow",
+      "documentation"
     ],
     "details": [
       {
         "area": "api-surface",
         "paths": [
+          "src/api/base.ts",
           "src/api/xiangqi.ts",
           "src/http/client.ts"
-        ]
-      },
-      {
-        "area": "models",
-        "paths": [
-          "src/types/index.ts",
-          "src/types/page-info.ts",
-          "src/types/problem-detail.ts",
-          "src/types/sdk-work-api-response.ts",
-          "src/types/xiangqi-api-result.ts",
-          "src/types/xiangqi-health-response.ts",
-          "src/types/xiangqi-match-data.ts",
-          "src/types/xiangqi-match-item.ts",
-          "src/types/xiangqi-match-list-data.ts",
-          "src/types/xiangqi-match-list-response.ts",
-          "src/types/xiangqi-match-page.ts",
-          "src/types/xiangqi-match-response.ts"
         ]
       },
       {
@@ -104,24 +83,35 @@
       {
         "area": "build-metadata",
         "paths": [
-          "package.json",
-          "sdkwork-sdk.json"
+          "package.json"
+        ]
+      },
+      {
+        "area": "publish-workflow",
+        "paths": [
+          "bin/publish-core.mjs"
+        ]
+      },
+      {
+        "area": "documentation",
+        "paths": [
+          "README.md"
         ]
       }
     ],
     "requiresVerification": true,
-    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata. Verification is required."
+    "summary": "Detected impact areas: api-surface, runtime, build-metadata, publish-workflow, documentation. Verification is required."
   },
   "verificationPlan": {
     "shouldRun": true,
     "runPhase": "now",
-    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "summary": "Detected impact areas: api-surface, runtime, build-metadata, publish-workflow, documentation. Verification is required. Run the required verification commands now against the generated SDK output.",
     "steps": [
       {
         "id": "check",
         "title": "Unified package check",
         "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata.",
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, runtime, build-metadata, publish-workflow, documentation.",
         "workingDirectory": "E:\\sdkwork-space\\sdkwork-xiangqi\\sdks\\sdkwork-xiangqi-backend-sdk\\sdkwork-xiangqi-backend-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -139,7 +129,7 @@
         "id": "build",
         "title": "Unified package build",
         "required": true,
-        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata.",
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, runtime, build-metadata, publish-workflow, documentation.",
         "workingDirectory": "E:\\sdkwork-space\\sdkwork-xiangqi\\sdks\\sdkwork-xiangqi-backend-sdk\\sdkwork-xiangqi-backend-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -164,7 +154,6 @@
     "summary": "Changes have been applied. Run the required verification plan now.",
     "reasons": [
       "backed-up-generated-files",
-      "deleted-generated-files",
       "manual-review-required",
       "verification-required"
     ]

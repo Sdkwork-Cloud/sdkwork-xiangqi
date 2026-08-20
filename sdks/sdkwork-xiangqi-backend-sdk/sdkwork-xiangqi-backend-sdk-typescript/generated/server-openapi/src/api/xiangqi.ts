@@ -1,5 +1,5 @@
 import { backendApiPath } from './paths';
-import type { HttpClient } from '../http/client';
+import type { ApiRequestOptions, HttpClient } from '../http/client';
 
 import type { XiangqiMatchListData } from '../types';
 
@@ -18,44 +18,38 @@ export class XiangqiBackendXiangqiMatchApi {
   }
 
 
-async list(params?: XiangqiBackendXiangqiMatchListParams): Promise<XiangqiMatchListData> {
+async list(params?: XiangqiBackendXiangqiMatchListParams, requestOptions?: ApiRequestOptions): Promise<XiangqiMatchListData> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
     ]);
-    return this.client.get<XiangqiMatchListData>(appendQueryString(backendApiPath(`/xiangqi/matches`), query));
+    return this.client.request<XiangqiMatchListData>(appendQueryString(backendApiPath(`/xiangqi/matches`), query), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'GET' as any, sdkworkUnwrapKind: 'page' });
   }
 }
 
 export class XiangqiBackendXiangqiApi {
-  private client: HttpClient;
   public readonly match: XiangqiBackendXiangqiMatchApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.match = new XiangqiBackendXiangqiMatchApi(client);
   }
 
 }
 
 export class XiangqiBackendApi {
-  private client: HttpClient;
   public readonly xiangqi: XiangqiBackendXiangqiApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.xiangqi = new XiangqiBackendXiangqiApi(client);
   }
 
 }
 
 export class XiangqiApi {
-  private client: HttpClient;
   public readonly backend: XiangqiBackendApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.backend = new XiangqiBackendApi(client);
   }
 
