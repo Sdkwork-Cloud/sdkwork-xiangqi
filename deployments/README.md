@@ -1,23 +1,23 @@
-# XIANGQI Deployments
+# Xiangqi Deployments
 
 Deployment descriptors and packaging handoff for `sdkwork-xiangqi`.
 
 ## Supported profiles
 
-| Profile | Layout | Notes |
-| --- | --- | --- |
-| `standalone` | unified-process | Local browser + API server on one host |
-| `cloud` | container | API server container with PostgreSQL |
+| Profile id | Notes |
+| --- | --- |
+| `standalone.development` / `standalone.production` | Local browser + API server on one host |
+| `cloud.development` / `cloud.production` | API server container with PostgreSQL |
 
 ## Templates
 
-- `templates/server.env.example` �?cloud container server env for `xiangqi_*` runtime
-- `docker/Dockerfile.XIANGQI-api` �?release API server image
+- `templates/server.env.example` — cloud container server env for `xiangqi_*` runtime
+- `docker/Dockerfile.xiangqi-api` — release API server image
 
 ## Topology
 
-- Dev: `configs/topology/standalone.unified-process.development.env`
-- No RPC split-service deployment yet; `sdkwork-discovery` is deferred until gRPC services are introduced.
+- Dev: `etc/topology/standalone.development.env`
+- No RPC split deployment yet; `sdkwork-discovery` is deferred until gRPC services are introduced.
 
 ## Packaging
 
